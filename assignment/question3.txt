@@ -1,0 +1,39 @@
+Question 3- 
+
+Answer- 
+
+import java.util.Scanner;
+public class ArrayPattern
+{
+   public static void main(String args[])
+   {  
+      int n,count=0;
+      Scanner sc=new Scanner(System.in);
+      System.out.println("Enter the number of elements stored in the array: ");
+      n=sc.nextInt();
+      int arr[]=new int[n];
+      System.out.println("Enter the elements of the array: ");
+      for(int i=0;i<n;i++)
+      {
+        arr[i]=sc.nextInt();
+      }
+      for(int i=0;i<n-1;i++)
+      {
+        for(int j=i+1;j<n;j++)
+        {
+          while(arr[j]>0)
+          {
+            int r=arr[j]%10;
+            int rev=rev*10+r;
+            int arr[j]=arr[j]/10;
+          }
+          if(rev==arr[i])
+          {
+            count++;
+          }
+        }
+      }
+      
+    System.out.println("count of those numbers which have their reverse present:" +count);
+   }
+}
