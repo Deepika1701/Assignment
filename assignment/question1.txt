@@ -1,0 +1,82 @@
+Question 1 -Part 1- 
+
+Answer- 
+
+import java.util.Scanner;
+public class ArrayPattern
+{
+   public static void main(String args[])
+   {  
+      int n;
+      Scanner sc=new Scanner(System.in);
+      System.out.println("Enter the number of elements stored in the array: ");
+      n=sc.nextInt();
+      int arr[]=new int[n];
+      System.out.println("Enter the elements of the array: ");
+      for(int i=0;i<n;i++)
+      {
+        arr[i]=sc.nextInt();
+      }
+      move(arr);
+      System.out.println("Final results: ");
+      for (int i=0; i<n; i++)
+         System.out.print(arr[i]+" ");
+   }
+
+  public int[] moveToEnd(int[] arr1) 
+   {
+        int temp = 0;
+        int n1=arr1.length();
+        for (int i = 1; i <n1; i++) 
+        {
+            if (arr[n1 - 1] % 5 != 0) 
+            {
+                temp = arr[n1 - 1];
+                arr[n1 - 1] = arr[i];
+                arr[i] = temp;
+            }
+        }
+        return arr1;
+    }
+}
+-------------------------------------------------------------------------------------------------------
+
+Question 1 -Part 2- 
+
+Answer- 
+
+import java.util.Scanner;
+public class ArrayPattern
+{
+   public static void main(String args[])
+   {  
+      int n,j=1;
+      Scanner sc=new Scanner(System.in);
+      System.out.println("Enter the number of elements stored in the array: ");
+      n=sc.nextInt();
+      int arr[]=new int[n];
+      System.out.println("Enter the elements of the array: ");
+      for(int i=0;i<n;i++)
+      {
+        arr[i]=sc.nextInt();
+      }
+      for(int i=0;i<n;i++)
+      {
+          if(arr[i]%5 == 0)
+          {
+            if((arr[n-j])%5 != 0)
+            {
+              arr[i]=arr[n-j];
+              arr[n-j]=arr[i];
+              j++;
+            }
+            else
+             j++;
+          } 
+      }
+     for(int i=0;i<n;i++)
+     {
+       System.out.println(arr[i]);
+     }
+   }
+}
